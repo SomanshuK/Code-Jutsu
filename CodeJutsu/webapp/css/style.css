@@ -1,7 +1,14 @@
 @charset "ISO-8859-1";
-body{
+
+body {
 	
 }
-	.primary-background {
-		background:#F44336!important;
-	}
+
+.primary-background {
+	background: #F44336 !important;
+}
+
+.list-group-item.active {
+	background-color: #F44336;
+	border-color: #F44336;
+}

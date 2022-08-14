@@ -21,7 +21,7 @@
 	<div class="container text-center">
 		<img src="img/error.png" class="img-fluid" style="object-fit:scale-down;width:300px;height:400px;">
 		<h3 class="display-4">Sorry! Something went wrong...</h3>
-		<%= exception%>
+		<%-- <%= exception%> --%>
 		<a href="index.jsp" class="btn primary-background btn-lg text-white mt-3">Home</a>
 	</div>
 
