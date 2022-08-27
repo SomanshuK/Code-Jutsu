@@ -146,4 +146,35 @@ public class PostDao {
 		
 	}
 	
+	public Post getRandomPost() {
+		Post post=null;
+		String query = "select * from posts order by rand() limit 1";
+		try {
+			PreparedStatement p = this.con.prepareStatement(query);
+			
+			ResultSet set = p.executeQuery();
+			
+			if(set.next()) {
+				
+				int pid = set.getInt("pid");
+				String pTitle = set.getString("pTitle");
+				String pContent = set.getString("pContent");
+				String pCode = set.getString("pCode");
+				String pPic = set.getString("pPic");
+				Timestamp date = set.getTimestamp("pDate");
+				int cid = set.getInt("cid");
+				int userID = set.getInt("userID");
+				
+				post = new Post(pid, pTitle, pContent, pCode, pPic, date, cid, userID); 
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		
+		return post;
+	}
+	
 }

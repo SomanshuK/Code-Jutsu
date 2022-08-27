@@ -1,3 +1,5 @@
+<%@page import="com.code.jutsu.entities.Post"%>
+<%@page import="com.code.jutsu.dao.PostDao"%>
 <%@page import="com.code.jutsu.helper.ConnectionProvider"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -57,12 +59,16 @@
 			<div class="col-md-4">
 				<div class="card">
 				
+					<%
+						PostDao dao = new PostDao(ConnectionProvider.getConnection());
+						Post p = dao.getRandomPost();
+						
 					
+					%>
 					<div class="card-body">
-						<h5 class="card-title">Java Programming</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary primary-background">Read More</a>
+						<h5 class="card-title"><%=p.getpTitle() %></h5>
+						<p class="card-text"><%=p.getpContent() %></p>
+						<a href="ShowBlog.jsp?post_id=<%= p.getPid() %>" class="btn btn-primary primary-background">Read More</a>
 					</div>
 				</div>
 
@@ -71,28 +77,38 @@
 			<div class="col-md-4">
 				<div class="card">
 				
+					<%
+						/* PostDao dao2 = new PostDao(ConnectionProvider.getConnection()); */
+						Post p2 = dao.getRandomPost();
+						
 					
+					%>
 					<div class="card-body">
-						<h5 class="card-title">Java Programming</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary primary-background">Read More</a>
+						<h5 class="card-title"><%=p2.getpTitle() %></h5>
+						<p class="card-text"><%=p2.getpContent() %></p>
+						<a href="ShowBlog.jsp?post_id=<%= p2.getPid() %>" class="btn btn-primary primary-background">Read More</a>
 					</div>
 				</div>
+
 
 			</div>
 			
 			<div class="col-md-4">
 				<div class="card">
 				
+					<%
+						/* PostDao dao = new PostDao(ConnectionProvider.getConnection()); */
+						Post p3 = dao.getRandomPost();
+						
 					
+					%>
 					<div class="card-body">
-						<h5 class="card-title">Java Programming</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary primary-background">Read More</a>
+						<h5 class="card-title"><%=p3.getpTitle() %></h5>
+						<p class="card-text"><%=p3.getpContent() %></p>
+						<a href="ShowBlog.jsp?post_id=<%= p3.getPid() %>" class="btn btn-primary primary-background">Read More</a>
 					</div>
 				</div>
+
 
 			</div>
 
@@ -105,12 +121,35 @@
 			<div class="col-md-4">
 				<div class="card">
 				
+					<%
+						/* PostDao dao = new PostDao(ConnectionProvider.getConnection()); */
+						Post p4 = dao.getRandomPost();
+						
 					
+					%>
 					<div class="card-body">
-						<h5 class="card-title">Java Programming</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary primary-background">Read More</a>
+						<h5 class="card-title"><%=p4.getpTitle() %></h5>
+						<p class="card-text"><%=p4.getpContent() %></p>
+						<a href="ShowBlog.jsp?post_id=<%= p4.getPid() %>" class="btn btn-primary primary-background">Read More</a>
+					</div>
+				</div>
+
+
+			</div>
+			
+			<div class="col-md-4">
+				<div class="card">
+				
+					<%
+						/* PostDao dao = new PostDao(ConnectionProvider.getConnection()); */
+						Post p5 = dao.getRandomPost();
+						
+					
+					%>
+					<div class="card-body">
+						<h5 class="card-title"><%=p5.getpTitle() %></h5>
+						<p class="card-text"><%=p5.getpContent() %></p>
+						<a href="ShowBlog.jsp?post_id=<%= p5.getPid() %>" class="btn btn-primary primary-background">Read More</a>
 					</div>
 				</div>
 
@@ -119,28 +158,19 @@
 			<div class="col-md-4">
 				<div class="card">
 				
+					<%
+						/* PostDao dao = new PostDao(ConnectionProvider.getConnection()); */
+						Post p6 = dao.getRandomPost();
+						
 					
+					%>
 					<div class="card-body">
-						<h5 class="card-title">Java Programming</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary primary-background">Read More</a>
+						<h5 class="card-title"><%=p6.getpTitle() %></h5>
+						<p class="card-text"><%=p6.getpContent() %></p>
+						<a href="ShowBlog.jsp?post_id=<%= p6.getPid() %>" class="btn btn-primary primary-background">Read More</a>
 					</div>
 				</div>
 
-			</div>
-			
-			<div class="col-md-4">
-				<div class="card">
-				
-					
-					<div class="card-body">
-						<h5 class="card-title">Java Programming</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary primary-background">Read More</a>
-					</div>
-				</div>
 
 			</div>
 

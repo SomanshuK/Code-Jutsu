@@ -1,3 +1,4 @@
+<%@page import="com.code.jutsu.dao.LikeDao"%>
 <%@page import="com.code.jutsu.dao.UserDao"%>
 <%@page import="com.code.jutsu.entities.Category"%>
 <%@page import="java.util.ArrayList"%>
@@ -6,6 +7,7 @@
 <%@page import="com.code.jutsu.entities.Post"%>
 <%@page import="com.code.jutsu.entities.User"%>
 <%@page errorPage="error.jsp" %>
+
 <%
 User user = (User) session.getAttribute("currentUser");
 if (user == null) {
@@ -62,7 +64,7 @@ if (user == null) {
 	</style>
 </head>
 <body>
-
+<!-- <script src="js/js.js" type="text/javascript"></script> -->
 	
 	<!-- navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark primary-background">
@@ -166,7 +168,11 @@ if (user == null) {
 						</div>
 						
 						<div class="card-footer">
-							<a href="#!" class="btn btn-outline-light btn-sm primary-background"><i class="fa fa-thumbs-o-up"><span>10</span></i></a>
+						
+							<%
+								LikeDao ldao = new LikeDao(ConnectionProvider.getConnection());
+							%>
+							<a href="#!" onclick="doLike(<%=p.getPid() %>,<%=user.getId() %>)" class="btn btn-outline-light btn-sm primary-background"><i class="fa fa-thumbs-o-up"><span class="like-counter"><%= ldao.countLikeOnPost(p.getPid()) %></span></i></a>
 							<a href="#!" class="btn btn-outline-light btn-sm primary-background"><i class="fa fa-commenting-o"><span>10</span></i></a>
 						
 						</div>
